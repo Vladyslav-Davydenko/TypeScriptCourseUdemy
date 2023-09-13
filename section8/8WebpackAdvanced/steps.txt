@@ -1,0 +1,11 @@
+lecture objectives:
+1. install external dependency (uuid)
+2. bundle it for node and browser
+
+steps:
+1. npm i uuid @types/uuid
+2. add uuid to Main.ts
+3. try to execute the bundle in both node and browser
+4. generate 2 webpack configurations: node and browser
+5. configure 2 build scripts: node and browser
+6. Run everything to make sure it works
