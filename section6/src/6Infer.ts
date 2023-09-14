@@ -58,9 +58,27 @@ type RegularPosition2 = RemovePrefix<'Awesome', AwesomePosition>
 
 
 
+type test1<T extends Array<any>> = T extends (infer R)[] ? R : never
 
+type Dtest1 = test1<Array<number>>
 
+type test2<T extends Promise<any>> = T extends Promise<infer R> ? R : never
 
+type Dtest2 = test2<Promise<boolean>>
+
+type test3<T extends {name: string, age: number}> = T extends {name: infer NAME, age: infer AGE} ? [NAME, AGE] : never
+
+type Dtest3 = test3<{name: "John", age: 50}>
+
+type Animals = 'SuperCat' | 'SuperDog' | 'SuperParrot'
+
+type test4<T> = T extends `Super${infer R}` ? R : never
+
+type Dtest4 = test4<Animals>
+
+type test5<S extends string, T> = T extends `${S}${infer R}` ? R : never
+
+type Dtest5 = test5<"Super", Animals>
 
 
 
